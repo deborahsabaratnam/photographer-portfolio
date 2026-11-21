@@ -1,0 +1,14 @@
+.home {
+    width: 100%;
+    background-color: #100809;
+}
+
+.hero-section {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    height: 100svh;
+    overflow: hidden;
+    background-color: #100809;
+    opacity: 0;
+}

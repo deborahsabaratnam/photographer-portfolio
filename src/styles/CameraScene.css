@@ -1,0 +1,25 @@
+/* ========================================
+   3D CAMERA SCENE
+======================================== */
+
+.camera-scene {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #100809;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.camera-scene canvas {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.camera-scene,
+.camera-scene * {
+    pointer-events: none !important;
+    touch-action: pan-y !important;
+}
