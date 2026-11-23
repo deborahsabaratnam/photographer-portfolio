@@ -1,0 +1,355 @@
+/* ========================================
+   TESTIMONIAL SECTION
+======================================== */
+
+.testimonials-section {
+    position: relative;
+    width: 100%;
+    min-height: 100svh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 110px 6%;
+    overflow: hidden;
+
+    border: none;
+    box-shadow: none;
+
+    background: linear-gradient(180deg,
+            var(--burgundy-light) 48%,
+            var(--burgundy) 82%,
+            var(--burgundy-dark) 100%);
+}
+
+/* ========================================
+   TESTIMONIAL LAYOUT
+======================================== */
+
+.testimonials-layout {
+    width: 100%;
+    max-width: 1400px;
+
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    align-items: center;
+
+    gap: clamp(50px, 8vw, 130px);
+}
+
+/* ========================================
+   STACKED PAPER
+======================================== */
+
+.testimonials-visual {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 35px;
+    min-width: 0;
+}
+
+.paper-stack {
+    position: relative;
+    width: min(100%, 480px);
+    height: 440px;
+
+    isolation: isolate;
+}
+
+.paper-sheet {
+    position: absolute;
+    inset: 30px 20px 15px;
+
+    background: var(--ivory);
+    border-radius: 0;
+
+    box-shadow: 0 18px 38px rgba(9, 9, 11, 0.18);
+}
+
+.paper-back-one {
+    transform: rotate(-8deg) translate(-8px, 8px);
+    background: var(--ivory-dark);
+    z-index: 1;
+}
+
+.paper-back-two {
+    transform: rotate(6deg) translate(9px, 4px);
+    background: var(--ivory-soft);
+    z-index: 2;
+}
+
+.paper-front {
+    z-index: 3;
+
+    transform: rotate(-3deg);
+    transform-origin: 50% 9%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 60px 45px 40px;
+
+    color: var(--obsidian);
+
+    will-change: transform, opacity;
+}
+
+/* ========================================
+   PAPER CONTENT
+======================================== */
+
+.paper-content {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    text-align: center;
+    gap: 24px;
+}
+
+.paper-eyebrow {
+    font-family: var(--font-sans);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.22em;
+
+    color: var(--burgundy);
+}
+
+.paper-quote {
+    margin: 0;
+
+    font-family: var(--font-sans);
+    font-size: clamp(16px, 1.65vw, 21px);
+    font-weight: 500;
+    line-height: 1.6;
+
+    color: var(--obsidian);
+}
+
+.paper-author {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    gap: 5px;
+}
+
+.paper-author strong {
+    font-family: var(--font-sans);
+    font-size: 14px;
+    font-weight: 800;
+
+    color: var(--burgundy-dark);
+}
+
+.paper-author span {
+    font-family: var(--font-sans);
+    font-size: 12px;
+
+    color: var(--black-elevated);
+}
+
+/* ========================================
+   OVERSIZED QUOTATION MARKS
+======================================== */
+
+.quote-mark {
+    position: absolute;
+
+    font-family: Georgia, serif;
+    font-size: 185px;
+    line-height: 1;
+
+    color: var(--burgundy-dark);
+    opacity: 0.65;
+
+    pointer-events: none;
+}
+
+.quote-open {
+    top: 18px;
+    left: 20px;
+}
+
+.quote-close {
+    right: 18px;
+    bottom: -35px;
+}
+
+/* ========================================
+   TESTIMONIAL CONTROLS
+======================================== */
+
+.testimonials-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 28px;
+}
+
+.testimonials-controls button {
+    width: 44px;
+    height: 44px;
+
+    background: transparent;
+    border: none;
+    border-radius: 0;
+
+    color: var(--ivory);
+
+    font-size: 26px;
+    cursor: pointer;
+
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease;
+}
+
+.testimonials-controls button:hover {
+    background: var(--burgundy-dark);
+    color: var(--ivory);
+}
+
+.testimonials-controls button:disabled {
+    opacity: 0.4;
+    cursor: default;
+}
+
+.testimonial-count {
+    font-family: var(--font-sans);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+
+    color: var(--ivory);
+}
+
+/* ========================================
+   RIGHT-HAND MESSAGE
+======================================== */
+
+.testimonials-copy {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    gap: 30px;
+}
+
+.testimonials-eyebrow {
+    font-family: var(--font-sans);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+
+    color: var(--obsidian);
+}
+
+.testimonials-copy h2 {
+    font-family: var(--font-serif);
+    font-size: clamp(2.5rem, 4.3vw, 5rem);
+    font-weight: 600;
+    line-height: 1.1;
+    letter-spacing: -0.035em;
+
+    color: var(--ivory);
+}
+
+.testimonials-copy h2 em {
+    display: block;
+    font-weight: 400;
+}
+
+.testimonials-copy p {
+    max-width: 440px;
+
+    font-family: var(--font-sans);
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.9;
+
+    color: var(--ivory-soft);
+}
+
+/* ========================================
+   RESPONSIVE - TABLET
+======================================== */
+
+@media (max-width: 900px) {
+
+    .testimonials-section {
+        padding: 100px 5%;
+    }
+
+    .testimonials-layout {
+        grid-template-columns: 1fr;
+        gap: 65px;
+    }
+
+    .paper-stack {
+        height: 420px;
+    }
+
+    .testimonials-copy {
+        text-align: center;
+        align-items: center;
+    }
+
+    .testimonials-copy p {
+        max-width: 560px;
+    }
+}
+
+/* ========================================
+   RESPONSIVE - MOBILE
+======================================== */
+
+@media (max-width: 480px) {
+
+    .testimonials-section {
+        padding: 80px 5%;
+    }
+
+    .paper-stack {
+        height: 350px;
+    }
+
+    .paper-sheet {
+        inset: 25px 12px 10px;
+    }
+
+    .paper-front {
+        padding: 55px 25px 30px;
+    }
+
+    .paper-quote {
+        font-size: 15px;
+    }
+
+    .quote-mark {
+        font-size: 85px;
+    }
+
+    .testimonials-copy h2 {
+        font-size: clamp(2.2rem, 9vw, 3.5rem);
+    }
+}
+
+/* ========================================
+   REDUCED MOTION
+======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .paper-front {
+        will-change: auto;
+    }
+}

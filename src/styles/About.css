@@ -1,0 +1,323 @@
+/* ========================================
+   ABOUT PAGE - OBSIDIAN BACKGROUND
+======================================== */
+
+.about-page {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+
+    padding: 145px 5% 100px;
+
+    background-color: var(--obsidian);
+}
+
+/* ========================================
+   FLOATING IVORY CANVAS
+======================================== */
+
+.about-canvas {
+    position: relative;
+    width: 100%;
+    max-width: 1500px;
+
+    margin: 0 auto;
+
+    background-color: var(--ivory);
+    color: var(--burgundy-dark);
+
+    overflow: hidden;
+
+    box-shadow: 0 25px 65px rgba(0, 0, 0, 0.22);
+}
+
+/* ========================================
+   GEOMETRIC BACKGROUND
+======================================== */
+
+.about-geometry {
+    position: absolute;
+    inset: 0;
+
+    z-index: 0;
+    pointer-events: none;
+
+    background-color: rgba(101, 28, 50, 0.07);
+
+    clip-path: polygon(70% 0,
+            100% 0,
+            100% 30%,
+            28% 100%,
+            0 100%,
+            0 84%);
+}
+
+/* ========================================
+   CONTENT
+======================================== */
+
+.about-content {
+    position: relative;
+    z-index: 1;
+
+    padding: 90px 7%;
+}
+
+/* ========================================
+   SECTION GRID
+======================================== */
+
+.about-section {
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 0.95fr) minmax(0, 1.05fr);
+
+    align-items: center;
+
+    gap: clamp(45px, 7vw, 110px);
+}
+
+.about-section-first {
+    margin-bottom: 95px;
+}
+
+.about-section-second {
+    margin-top: 95px;
+}
+
+/* ========================================
+   IMAGES
+======================================== */
+
+.about-image-wrap {
+    position: relative;
+    width: 100%;
+    min-width: 0;
+}
+
+.about-image {
+    display: block;
+    width: 100%;
+
+    aspect-ratio: 4 / 5;
+
+    object-fit: cover;
+    object-position: center;
+
+    filter: grayscale(100%);
+}
+
+.about-section-second .about-image {
+    filter: none;
+}
+
+.about-image-caption {
+    display: block;
+    margin-top: 14px;
+
+    font-family: var(--font-sans);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+
+    color: var(--burgundy-light);
+}
+
+/* ========================================
+   EDITORIAL TYPOGRAPHY
+======================================== */
+
+.about-text {
+    min-width: 0;
+}
+
+/* Small section headings */
+
+.about-eyebrow {
+    display: inline-block;
+    margin-bottom: 25px;
+
+    font-family: var(--font-sans);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 0.18em;
+
+    color: var(--burgundy);
+}
+
+/* Main headings */
+
+.about-text h1,
+.about-text h2 {
+    margin: 0 0 35px;
+
+    font-family: var(--font-serif);
+    font-size: clamp(3.2rem, 5vw, 6rem);
+    font-weight: 500;
+    line-height: 1.05;
+    letter-spacing: -0.045em;
+
+    color: var(--burgundy-dark);
+}
+
+/* Italic heading accents */
+
+.about-text h1 em,
+.about-text h2 em {
+    font-weight: 400;
+    color: var(--burgundy);
+}
+
+/* Body paragraphs */
+
+.about-text p {
+    margin: 0 0 18px;
+
+    font-family: var(--font-sans);
+    font-size: clamp(14px, 1.1vw, 16px);
+    font-weight: 400;
+    line-height: 1.9;
+
+    color: #69404E;
+}
+
+/* Highlighted editorial statements */
+
+.about-text .about-emphasis {
+    margin-top: 26px;
+    margin-bottom: 0;
+
+    font-family: var(--font-serif);
+    font-size: clamp(19px, 1.8vw, 25px);
+    font-style: italic;
+    line-height: 1.45;
+
+    color: var(--burgundy);
+}
+
+/* ========================================
+   EDITORIAL DIVIDER
+======================================== */
+
+.about-editorial-divider {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+    padding: 22px 0;
+
+    border-top: 1px solid rgba(101, 28, 50, 0.25);
+    border-bottom: 1px solid rgba(101, 28, 50, 0.25);
+}
+
+.about-editorial-divider span {
+    font-family: var(--font-sans);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+
+    color: var(--burgundy-dark);
+}
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media (max-width: 1000px) {
+
+    .about-page {
+        padding: 120px 4% 75px;
+    }
+
+    .about-content {
+        padding: 65px 6%;
+    }
+
+    .about-section {
+        gap: 35px;
+    }
+
+    .about-text h1,
+    .about-text h2 {
+        font-size: clamp(2.7rem, 5vw, 4rem);
+    }
+
+    .about-text p {
+        font-size: 14px;
+        line-height: 1.8;
+    }
+}
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 700px) {
+
+    .about-page {
+        padding: 100px 4% 60px;
+    }
+
+    .about-content {
+        padding: 45px 7%;
+    }
+
+    .about-section {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .about-section-first {
+        margin-bottom: 65px;
+    }
+
+    .about-section-second {
+        margin-top: 65px;
+    }
+
+    .about-section-second .about-text {
+        order: 2;
+    }
+
+    .about-section-second .about-image-wrap {
+        order: 1;
+    }
+
+    .about-image {
+        aspect-ratio: 4 / 4.5;
+    }
+
+    .about-text h1,
+    .about-text h2 {
+        font-size: clamp(3rem, 10vw, 4.5rem);
+        margin-bottom: 25px;
+    }
+
+    .about-text p {
+        font-size: 14px;
+        line-height: 1.85;
+    }
+
+    .about-editorial-divider span {
+        font-size: 9px;
+    }
+
+    .about-geometry {
+        opacity: 0.65;
+    }
+}
+
+/* ========================================
+   REDUCED MOTION
+======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .about-reveal,
+    .about-reveal-second {
+        opacity: 1 !important;
+        transform: none !important;
+    }
+}

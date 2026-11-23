@@ -1,0 +1,378 @@
+/* ========================================
+   CAROUSEL SECTION - BURGUNDY GRADIENT
+======================================== */
+
+.photo-carousel-section {
+    position: relative;
+    width: 100%;
+    min-height: 85svh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    padding: 60px 0 70px;
+
+    background: linear-gradient(180deg,
+            var(--burgundy) 0%,
+            #754057 55%,
+            var(--burgundy-light) 100%);
+
+    overflow: hidden;
+}
+
+/* ========================================
+   CAROUSEL CONTAINER
+======================================== */
+
+.photo-carousel {
+    position: relative;
+
+    width: 100%;
+    height: clamp(300px, 34vw, 480px);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ========================================
+   3D PERSPECTIVE TRACK
+======================================== */
+
+.carousel-track {
+    position: relative;
+
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    perspective: 1200px;
+    transform-style: preserve-3d;
+
+    cursor: grab;
+    touch-action: pan-y;
+    user-select: none;
+}
+
+.carousel-track.dragging {
+    cursor: grabbing;
+}
+
+/* ========================================
+   INDIVIDUAL PHOTOGRAPHS
+======================================== */
+
+.carousel-photo {
+    position: absolute;
+
+    width: clamp(175px, 22vw, 330px);
+    height: clamp(255px, 33vw, 490px);
+
+    flex-shrink: 0;
+
+    background-color: var(--obsidian);
+
+    border-radius: 0;
+    overflow: hidden;
+
+    transform-origin: center;
+    will-change: transform;
+
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.22);
+}
+
+.carousel-photo img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+
+    pointer-events: none;
+    user-select: none;
+}
+
+/* ========================================
+   TEMPORARY IMAGE PLACEHOLDERS
+======================================== */
+
+.carousel-placeholder {
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: linear-gradient(145deg,
+            var(--burgundy-dark),
+            var(--obsidian));
+
+    color: var(--ivory);
+
+    font-family: var(--font-serif);
+    font-size: 3rem;
+
+    pointer-events: none;
+}
+
+/* ========================================
+   PREVIOUS AND NEXT BUTTONS
+======================================== */
+
+.carousel-arrow {
+    position: absolute;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    width: 55px;
+    height: 55px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: transparent;
+    color: var(--ivory);
+
+    border: none;
+    border-radius: 0;
+
+    font-size: 30px;
+    font-weight: 400;
+
+    cursor: pointer;
+    z-index: 200;
+
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease;
+}
+
+.carousel-previous {
+    left: 25px;
+}
+
+.carousel-next {
+    right: 25px;
+}
+
+.carousel-arrow:hover {
+    background-color: var(--obsidian);
+    color: var(--ivory);
+}
+
+/* ========================================
+   BOTTOM CONTROLS
+======================================== */
+
+.carousel-bottom {
+    position: relative;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    gap: 16px;
+    margin-top: 10px;
+}
+
+/* ========================================
+   CIRCULAR PLAY / PAUSE BUTTON
+======================================== */
+
+.carousel-playback {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 54px;
+    height: 54px;
+    flex-shrink: 0;
+
+    padding: 0;
+
+    background: transparent;
+    color: var(--ivory);
+
+    border: 1px solid var(--ivory);
+    border-radius: 50%;
+
+    box-shadow: none;
+    cursor: pointer;
+
+    transition:
+        background-color 0.3s ease,
+        border-color 0.3s ease,
+        color 0.3s ease;
+}
+
+.carousel-playback:hover {
+    background-color: var(--obsidian);
+    border-color: var(--obsidian);
+    color: var(--ivory);
+}
+
+.carousel-playback.is-paused {
+    background: transparent;
+    color: var(--ivory);
+    border-color: var(--ivory);
+}
+
+.carousel-playback.is-paused:hover {
+    background-color: var(--obsidian);
+    border-color: var(--obsidian);
+}
+
+/* ========================================
+   PLAY / PAUSE ICON
+======================================== */
+
+.carousel-playback svg {
+    display: block;
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+}
+
+/* ========================================
+   EXPLORE PORTFOLIO CTA
+======================================== */
+
+.carousel-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 35px;
+    padding: 16px 24px;
+
+    font-family: var(--font-sans);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+
+    color: var(--ivory);
+    background-color: transparent;
+
+    border: 1px solid var(--ivory);
+    border-radius: 0;
+
+    text-decoration: none;
+
+    transition:
+        background-color 0.3s ease,
+        border-color 0.3s ease,
+        color 0.3s ease;
+}
+
+.carousel-cta:hover {
+    background-color: var(--obsidian);
+    border-color: var(--obsidian);
+    color: var(--ivory);
+}
+
+.carousel-cta span {
+    font-size: 20px;
+}
+
+/* ========================================
+   KEYBOARD ACCESSIBILITY
+======================================== */
+
+.carousel-arrow:focus-visible,
+.carousel-playback:focus-visible,
+.carousel-cta:focus-visible {
+    outline: 2px solid var(--ivory);
+    outline-offset: 4px;
+}
+
+/* ========================================
+   RESPONSIVE - TABLET / MOBILE
+======================================== */
+
+@media (max-width: 768px) {
+
+    .photo-carousel-section {
+        min-height: 80svh;
+        padding: 70px 0;
+    }
+
+    .photo-carousel {
+        height: 380px;
+    }
+
+    .carousel-photo {
+        width: 170px;
+        height: 260px;
+    }
+
+    .carousel-arrow {
+        width: 42px;
+        height: 42px;
+        font-size: 24px;
+    }
+
+    .carousel-previous {
+        left: 8px;
+    }
+
+    .carousel-next {
+        right: 8px;
+    }
+
+    .carousel-bottom {
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+
+        gap: 12px;
+        margin-top: 20px;
+    }
+
+    .carousel-playback {
+        width: 48px;
+        height: 48px;
+    }
+
+    .carousel-cta {
+        gap: 16px;
+        padding: 13px 16px;
+        font-size: 11px;
+    }
+
+    .carousel-cta span {
+        font-size: 18px;
+    }
+}
+
+/* ========================================
+   RESPONSIVE - SMALL MOBILE
+======================================== */
+
+@media (max-width: 380px) {
+
+    .carousel-bottom {
+        gap: 10px;
+    }
+
+    .carousel-playback {
+        width: 44px;
+        height: 44px;
+    }
+
+    .carousel-cta {
+        gap: 10px;
+        padding: 12px;
+        font-size: 10px;
+    }
+}

@@ -3,20 +3,29 @@
 ======================================== */
 
 .camera-scene {
-    position: absolute;
-    inset: 0;
+    position: relative;
     width: 100%;
     height: 100%;
-    background-color: #100809;
+
+    /* Allow typography behind the camera to show */
+    background: transparent;
     overflow: hidden;
-    pointer-events: none;
 }
+
+/* ========================================
+   THREE.JS CANVAS
+======================================== */
 
 .camera-scene canvas {
     display: block;
-    width: 100%;
-    height: 100%;
+    width: 100% !important;
+    height: 100% !important;
+    background: transparent !important;
 }
+
+/* ========================================
+   SCROLL INTERACTION
+======================================== */
 
 .camera-scene,
 .camera-scene * {

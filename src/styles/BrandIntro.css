@@ -1,0 +1,262 @@
+/* ========================================
+   BRAND SECTION - BACKGROUND
+======================================== */
+
+.brand-section {
+    position: relative;
+    width: 100%;
+    min-height: 100svh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 150px 6%;
+
+    background-color: var(--burgundy);
+
+    overflow: hidden;
+}
+
+/* ========================================
+   FLOATING CANVAS
+======================================== */
+
+.brand-canvas {
+    position: relative;
+
+    width: 100%;
+    max-width: 1400px;
+
+    display: grid;
+    grid-template-columns: 1.15fr 1fr;
+    align-items: center;
+    gap: 50px;
+
+    padding: 40px;
+
+    background-color: var(--ivory);
+
+    border-radius: 0;
+
+    box-shadow: 0 30px 90px rgba(0, 0, 0, 0.35);
+}
+
+/* ========================================
+   LEFT SIDE - PHOTOGRAPH
+======================================== */
+
+.brand-visual {
+    position: relative;
+    min-width: 0;
+
+    padding-bottom: 45px;
+}
+
+.brand-photo {
+    width: 100%;
+    height: clamp(300px, 32vw, 480px);
+
+    overflow: hidden;
+}
+
+.brand-photo img {
+    display: block;
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+}
+
+/* ========================================
+   OVERSIZED BRAND NAME
+======================================== */
+
+.brand-name {
+    position: absolute;
+
+    bottom: 45px;
+    left: 10px;
+
+    transform: translateY(50%);
+
+    font-family: var(--font-sans);
+    font-size: clamp(2.5rem, 7vw, 7.5rem);
+    font-weight: 800;
+    letter-spacing: -0.065em;
+    line-height: 1;
+
+    color: var(--burgundy);
+
+    white-space: nowrap;
+
+    z-index: 2;
+}
+
+/* ========================================
+   RIGHT SIDE - BRAND MESSAGE
+======================================== */
+
+.brand-copy {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    gap: 28px;
+    padding: 20px 0;
+}
+
+.brand-headline {
+    font-family: var(--font-serif);
+    font-size: clamp(2.2rem, 4vw, 4.5rem);
+    font-weight: 600;
+    line-height: 1.1;
+    letter-spacing: -0.035em;
+
+    color: var(--burgundy);
+}
+
+.brand-headline span {
+    display: block;
+
+    font-style: italic;
+    font-weight: 400;
+
+    color: var(--burgundy);
+}
+
+/* ========================================
+   DESCRIPTION
+======================================== */
+
+.brand-description {
+    max-width: 400px;
+
+    font-family: var(--font-sans);
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.8;
+
+    color: var(--obsidian);
+}
+
+/* ========================================
+   BEHIND THE LENS CTA
+======================================== */
+
+.brand-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 35px;
+
+    padding: 16px 24px;
+
+    font-family: var(--font-sans);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+
+    color: var(--obsidian);
+    background: transparent;
+
+    border: 1px solid var(--obsidian);
+    border-radius: 0;
+
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease,
+        border-color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.brand-cta:hover {
+    background-color: var(--burgundy);
+    color: var(--ivory);
+    border-color: var(--ivory);
+
+    transform: translateY(-2px);
+}
+
+.brand-cta span {
+    font-size: 20px;
+}
+
+/* ========================================
+   RESPONSIVE - TABLET
+======================================== */
+
+@media (max-width: 900px) {
+
+    .brand-section {
+        padding: 120px 5%;
+    }
+
+    .brand-canvas {
+        grid-template-columns: 1fr;
+        gap: 25px;
+        padding: 25px;
+    }
+
+    .brand-photo {
+        height: clamp(260px, 65vw, 480px);
+    }
+
+    .brand-name {
+        font-size: clamp(2.5rem, 8vw, 5rem);
+        left: 0;
+    }
+
+    .brand-copy {
+        gap: 20px;
+    }
+}
+
+/* ========================================
+   RESPONSIVE - MOBILE
+======================================== */
+
+@media (max-width: 600px) {
+
+    .brand-section {
+        min-height: auto;
+        padding: 90px 5%;
+    }
+
+    .brand-canvas {
+        padding: 18px;
+        gap: 30px;
+    }
+
+    .brand-visual {
+        padding-bottom: 30px;
+    }
+
+    .brand-photo {
+        height: 300px;
+    }
+
+    .brand-name {
+        bottom: 30px;
+        left: 0;
+
+        font-size: clamp(1.8rem, 8vw, 3.5rem);
+        letter-spacing: -0.06em;
+    }
+
+    .brand-headline {
+        font-size: clamp(2rem, 8vw, 3rem);
+    }
+
+    .brand-description {
+        font-size: 14px;
+        line-height: 1.8;
+    }
+
+    .brand-cta {
+        padding: 14px 18px;
+        font-size: 11px;
+    }
+}

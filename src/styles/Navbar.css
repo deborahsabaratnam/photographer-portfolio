@@ -1,35 +1,175 @@
-.navbar { /*Floating, pill-shaped nav bar*/
-    position: absolute;
-    top: 30px;
-    left: 50%;
-    transform: translateX(-50%);
+/* ========================================
+   NAVBAR LAYOUT
+======================================== */
 
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+
+    padding: 25px 40px;
+
+    background: transparent;
+    z-index: 1000;
+}
+
+/* ========================================
+   BRAND NAME
+======================================== */
+
+.navbar-brand {
+    justify-self: start;
+
+    font-family: var(--font-serif);
+    font-size: clamp(1.2rem, 2vw, 1.8rem);
+    font-weight: 600;
+    letter-spacing: -0.02em;
+
+    color: var(--ivory);
+    text-decoration: none;
+}
+
+/* ========================================
+   CENTER NAVIGATION LINKS
+======================================== */
+
+.navbar-links {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 25px;
-
-    padding: 14px 25px;
-    border-radius: 100px;
-
-    background: rgba(255, 248, 202, 0.85);
-    backdrop-filter: blur(12px);
-
-    z-index: 100;
 }
 
-.navbar a {
-    color: #6b0b0c;
-    text-decoration: none;
+.navbar-links a {
+    padding: 14px 20px;
+
+    font-family: var(--font-sans);
     font-size: 14px;
-    font-weight: 500;
-    transition: opacity 0.3s ease;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+
+    color: var(--ivory);
+    background-color: transparent;
+
+    text-decoration: none;
+    border-radius: 0;
+
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease;
 }
 
-.navbar a:hover {
-    opacity: 0.6;
+/* Navigation hover */
+
+.navbar-links a:hover {
+    background-color: var(--burgundy);
+    color: var(--ivory);
 }
 
-.navbar a.active {
+/* Active navigation link */
+
+.navbar-links a.active {
+    font-weight: 800;
+}
+
+/* ========================================
+   GET IN TOUCH BUTTON
+======================================== */
+
+.navbar-cta {
+    justify-self: end;
+
+    padding: 14px 28px;
+
+    font-family: var(--font-sans);
+    font-size: 13px;
     font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+
+    background-color: var(--burgundy);
+    color: var(--ivory);
+
+    border: none;
+    border-radius: 0;
+
+    transition:
+        background-color 0.3s ease,
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+/* CTA hover */
+
+.navbar-cta:hover {
+    background-color: var(--burgundy-light);
+    color: var(--ivory);
+    transform: translateY(-2px);
+}
+
+/* ========================================
+   KEYBOARD ACCESSIBILITY
+======================================== */
+
+.navbar-links a:focus-visible,
+.navbar-cta:focus-visible,
+.navbar-brand:focus-visible {
+    outline: 2px solid var(--ivory);
+    outline-offset: 4px;
+}
+
+/* ========================================
+   RESPONSIVE - TABLET
+======================================== */
+
+@media (max-width: 1024px) {
+
+    .navbar {
+        padding: 22px 28px;
+    }
+
+    .navbar-links {
+        gap: 10px;
+    }
+
+    .navbar-links a {
+        padding: 12px 14px;
+        font-size: 12px;
+    }
+
+    .navbar-cta {
+        padding: 12px 18px;
+        font-size: 12px;
+    }
+}
+
+/* ========================================
+   RESPONSIVE - MOBILE
+======================================== */
+
+@media (max-width: 768px) {
+
+    .navbar {
+        grid-template-columns: 1fr auto;
+        padding: 20px;
+    }
+
+    .navbar-brand {
+        font-size: 1.4rem;
+    }
+
+    .navbar-links {
+        display: none;
+    }
+
+    .navbar-cta {
+        padding: 11px 15px;
+        font-size: 11px;
+    }
 }

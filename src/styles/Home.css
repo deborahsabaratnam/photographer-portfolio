@@ -1,14 +1,214 @@
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@400;500;600&display=swap');
+
+/* ========================================
+   HOME
+======================================== */
+
 .home {
     width: 100%;
-    background-color: #100809;
+    background-color: var(--obsidian);
 }
+
+/* ========================================
+   HERO SECTION
+======================================== */
 
 .hero-section {
     position: relative;
     width: 100%;
-    height: 100vh;
     height: 100svh;
+    min-height: 100vh;
     overflow: hidden;
-    background-color: #100809;
+    isolation: isolate;
+
+    background: linear-gradient(to bottom,
+            #09090B 0%,
+            #09090B 70%,
+            #260C17 85%,
+            #651C32 100%);
+}
+
+/* ========================================
+   BEYOND / THE - BEHIND CAMERA
+======================================== */
+
+.hero-editorial {
+    position: absolute;
+
+    left: 4%;
+    top: 20%;
+
+    width: 92%;
+
+    z-index: 1;
+    opacity: 1;
+
+    pointer-events: none;
+}
+
+.hero-editorial-title {
+    margin: 0;
+
+    font-family: 'Bodoni Moda', serif;
+    font-size: clamp(5rem, 10vw, 12rem);
+    font-weight: 500;
+
+    line-height: 0.95;
+    letter-spacing: -0.065em;
+
+    color: #F7F4F0;
+}
+
+.hero-editorial-title span {
+    display: block;
+    white-space: nowrap;
+}
+
+/* ========================================
+   CAMERA - MIDDLE LAYER
+======================================== */
+
+.hero-camera-layer {
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    z-index: 2;
+    pointer-events: none;
+}
+
+/* CameraScene root container */
+.hero-camera-layer>div {
+    width: 100%;
+    height: 100%;
+}
+
+/* Three.js canvas */
+.hero-camera-layer canvas {
+    display: block;
+
+    width: 100% !important;
+    height: 100% !important;
+
+    background: transparent !important;
+}
+
+/* ========================================
+   LENS - FRONT OF CAMERA
+======================================== */
+
+.hero-front-layer {
+    position: absolute;
+    left: 4%;
+    top: 67%;
+    width: 92%;
+    z-index: 3;
     opacity: 0;
+    pointer-events: none;
+}
+
+.hero-lens-text {
+    display: block;
+
+    font-family: 'Bodoni Moda', serif;
+    font-size: clamp(6rem, 13vw, 15rem);
+    font-weight: 500;
+
+    line-height: 0.9;
+    letter-spacing: -0.065em;
+
+    color: #F7F4F0;
+}
+
+/* ========================================
+   SHOWCASE GRADIENT
+======================================== */
+
+.home-showcase {
+    position: relative;
+
+    background: linear-gradient(180deg,
+            var(--burnt-orange) 0%,
+            #754A3D 22%,
+            #304C55 45%,
+            var(--cinematic-blue) 60%,
+            var(--muted-cyan) 75%,
+            #A38E87 90%,
+            #C77B57 100%);
+}
+
+/* ========================================
+   TABLET
+======================================== */
+
+@media (max-width: 1024px) {
+
+    .hero-editorial {
+        opacity: 0;
+    }
+
+    .hero-editorial-title {
+        font-size: clamp(4rem, 11vw, 8rem);
+    }
+
+    .hero-front-layer {
+        opacity: 0;
+    }
+
+    .hero-lens-text {
+        font-size: clamp(5rem, 14vw, 10rem);
+    }
+}
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 768px) {
+
+    .hero-editorial {
+        left: 5%;
+        top: 30%;
+        width: 90%;
+    }
+
+    .hero-editorial-title {
+        font-size: clamp(3rem, 12vw, 5.5rem);
+        line-height: 1;
+    }
+
+    .hero-front-layer {
+        left: 5%;
+        top: 65%;
+        width: 90%;
+    }
+
+    .hero-lens-text {
+        font-size: clamp(4rem, 17vw, 7rem);
+    }
+}
+
+/* ========================================
+   SMALL MOBILE
+======================================== */
+
+@media (max-width: 480px) {
+
+    .hero-editorial {
+        top: 33%;
+    }
+
+    .hero-editorial-title {
+        font-size: clamp(2.8rem, 12vw, 4rem);
+    }
+
+    .hero-front-layer {
+        top: 68%;
+    }
+
+    .hero-lens-text {
+        font-size: clamp(3.5rem, 18vw, 5rem);
+    }
 }
