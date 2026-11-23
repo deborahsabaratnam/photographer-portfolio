@@ -158,64 +158,53 @@ function Testimonials() {
                             </span>
                         </div>
 
-                        {/* Decorative pushpin stays fixed */}
-                        <div className="paper-pin">
-                            <img
-                                src="/images/obsidian-pin.png"
-                                alt=""
-                                aria-hidden="true"
-                                draggable="false"
-                            />
+                        <div className="testimonials-controls">
+                            <button
+                                type="button"
+                                onClick={() => changeTestimonial(-1)}
+                                disabled={isAnimating}
+                                aria-label="Previous testimonial"
+                            >
+                                ←
+                            </button>
+
+                            <span className="testimonial-count">
+                                {String(activeIndex + 1).padStart(2, '0')}
+                                {' / '}
+                                {String(testimonials.length).padStart(2, '0')}
+                            </span>
+
+                            <button
+                                type="button"
+                                onClick={() => changeTestimonial(1)}
+                                disabled={isAnimating}
+                                aria-label="Next testimonial"
+                            >
+                                →
+                            </button>
                         </div>
                     </div>
 
-                    <div className="testimonials-controls">
-                        <button
-                            type="button"
-                            onClick={() => changeTestimonial(-1)}
-                            disabled={isAnimating}
-                            aria-label="Previous testimonial"
-                        >
-                            ←
-                        </button>
-
-                        <span className="testimonial-count">
-                            {String(activeIndex + 1).padStart(2, '0')}
-                            {' / '}
-                            {String(testimonials.length).padStart(2, '0')}
+                    {/* RIGHT: PHOTOGRAPHY-FOCUSED MESSAGE */}
+                    <div className="testimonials-copy">
+                        <span className="testimonials-eyebrow">
+                            BEYOND THE FRAME
                         </span>
 
-                        <button
-                            type="button"
-                            onClick={() => changeTestimonial(1)}
-                            disabled={isAnimating}
-                            aria-label="Next testimonial"
-                        >
-                            →
-                        </button>
+                        <h2>
+                            The moments matter.
+                            <em> So do the people behind them.</em>
+                        </h2>
+
+                        <p>
+                            Every event is personal. From the first
+                            conversation to the final photograph, we
+                            believe the experience should be just as
+                            memorable as the moments we capture.
+                        </p>
                     </div>
+
                 </div>
-
-                {/* RIGHT: PHOTOGRAPHY-FOCUSED MESSAGE */}
-                <div className="testimonials-copy">
-                    <span className="testimonials-eyebrow">
-                        BEYOND THE FRAME
-                    </span>
-
-                    <h2>
-                        The moments matter.
-                        <em> So do the people behind them.</em>
-                    </h2>
-
-                    <p>
-                        Every event is personal. From the first
-                        conversation to the final photograph, we
-                        believe the experience should be just as
-                        memorable as the moments we capture.
-                    </p>
-                </div>
-
-            </div>
         </section>
     );
 }

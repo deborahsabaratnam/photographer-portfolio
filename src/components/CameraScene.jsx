@@ -26,7 +26,9 @@ import '../styles/CameraScene.css';
 // CONFIGURATION
 // ========================================
 
-const MODEL_URL = '/models/sony-camera-updated.glb';
+const { scene } = useGLTF(
+    `${import.meta.env.BASE_URL}models/sony-camera-updated.glb`
+);
 
 const HERO_IMAGE_URL =
     'https://res.cloudinary.com/db8dcy5no/image/upload/v1795255647/IMG_3576_tiqqa5.jpg';
