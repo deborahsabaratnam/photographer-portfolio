@@ -28,7 +28,7 @@ const albums = [
         category: 'THE CELEBRATION',
         title: 'Vivekaz Walk',
         description: 'The spirit of a generation.',
-        image: 'https://res.cloudinary.com/db8dcy5no/image/upload/v1795409981/IMG_5697_ttd78q.jpg'
+        image: "/images/vivekaz-cover.jpg",
     }
 ];
 
