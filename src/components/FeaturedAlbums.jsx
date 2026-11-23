@@ -28,7 +28,7 @@ const albums = [
         category: 'THE CELEBRATION',
         title: 'Vivekaz Walk',
         description: 'The spirit of a generation.',
-        image: "/images/vivekaz-cover.jpg",
+        image: '${import.meta.env.BASE_URL}images/vivekaz-cover.jpg',
     }
 ];
 

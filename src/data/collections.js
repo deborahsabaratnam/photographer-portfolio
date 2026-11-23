@@ -69,7 +69,7 @@ export const collections = [
         title: "Vivekaz Walk",
         category: "EVENT PHOTOGRAPHY",
         description: "The energy of a generation.",
-        cover: "/images/vivekaz-cover.jpg",
+        cover: '${import.meta.env.BASE_URL}images/vivekaz-cover.jpg',
         media: [
             {
             type: "image",
