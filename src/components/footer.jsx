@@ -1,4 +1,3 @@
-
 import { MessageCircle, Mail } from 'lucide-react';
 import { Link } from 'react-router';
 import '../styles/Footer.css';

@@ -1,5 +1,5 @@
 /* ========================================
-   BRAND SECTION - BACKGROUND
+   BRAND SECTION — CINEMATIC TRANSITION
 ======================================== */
 
 .brand-section {
@@ -11,10 +11,23 @@
     align-items: center;
     justify-content: center;
 
-    padding: 150px 6%;
+    padding: 120px 6%;
 
-    background-color: var(--burgundy);
+    background-color: var(--burgundy-deep);
 
+    background-image:
+        radial-gradient(ellipse 65% 45% at 78% 42%,
+            rgba(142, 64, 87, 0.60) 0%,
+            transparent 100%),
+        radial-gradient(ellipse 55% 40% at 18% 65%,
+            rgba(101, 28, 50, 0.55) 0%,
+            transparent 100%),
+        linear-gradient(180deg,
+            var(--burgundy) 0%,
+            var(--burgundy-dark) 55%,
+            var(--burgundy-deep) 100%);
+
+    background-repeat: no-repeat;
     overflow: hidden;
 }
 
@@ -26,14 +39,14 @@
     position: relative;
 
     width: 100%;
-    max-width: 1400px;
+    max-width: 1200px;
 
     display: grid;
     grid-template-columns: 1.15fr 1fr;
     align-items: center;
-    gap: 50px;
 
-    padding: 40px;
+    gap: 50px;
+    padding: 30px;
 
     background-color: var(--ivory);
 
@@ -43,14 +56,15 @@
 }
 
 /* ========================================
-   LEFT SIDE - PHOTOGRAPH
+   LEFT SIDE — PHOTOGRAPH
 ======================================== */
 
 .brand-visual {
     position: relative;
     min-width: 0;
 
-    padding-bottom: 45px;
+    /* No longer needed after removing brand name */
+    padding-bottom: 0;
 }
 
 .brand-photo {
@@ -70,32 +84,7 @@
 }
 
 /* ========================================
-   OVERSIZED BRAND NAME
-======================================== */
-
-.brand-name {
-    position: absolute;
-
-    bottom: 45px;
-    left: 10px;
-
-    transform: translateY(50%);
-
-    font-family: var(--font-sans);
-    font-size: clamp(2.5rem, 7vw, 7.5rem);
-    font-weight: 800;
-    letter-spacing: -0.065em;
-    line-height: 1;
-
-    color: var(--burgundy);
-
-    white-space: nowrap;
-
-    z-index: 2;
-}
-
-/* ========================================
-   RIGHT SIDE - BRAND MESSAGE
+   RIGHT SIDE — BRAND MESSAGE
 ======================================== */
 
 .brand-copy {
@@ -104,10 +93,12 @@
     align-items: flex-start;
 
     gap: 28px;
-    padding: 20px 0;
+    padding: 10px 0;
 }
 
 .brand-headline {
+    margin: 0;
+
     font-family: var(--font-serif);
     font-size: clamp(2.2rem, 4vw, 4.5rem);
     font-weight: 600;
@@ -132,6 +123,7 @@
 
 .brand-description {
     max-width: 400px;
+    margin: 0;
 
     font-family: var(--font-sans);
     font-size: 16px;
@@ -151,7 +143,6 @@
     justify-content: space-between;
 
     gap: 35px;
-
     padding: 16px 24px;
 
     font-family: var(--font-sans);
@@ -165,6 +156,8 @@
     border: 1px solid var(--obsidian);
     border-radius: 0;
 
+    text-decoration: none;
+
     transition:
         background-color 0.3s ease,
         color 0.3s ease,
@@ -175,9 +168,14 @@
 .brand-cta:hover {
     background-color: var(--burgundy);
     color: var(--ivory);
-    border-color: var(--ivory);
+    border-color: var(--burgundy);
 
     transform: translateY(-2px);
+}
+
+.brand-cta:focus-visible {
+    outline: 2px solid var(--burgundy);
+    outline-offset: 4px;
 }
 
 .brand-cta span {
@@ -185,13 +183,13 @@
 }
 
 /* ========================================
-   RESPONSIVE - TABLET
+   RESPONSIVE — TABLET
 ======================================== */
 
 @media (max-width: 900px) {
 
     .brand-section {
-        padding: 120px 5%;
+        padding: 110px 5%;
     }
 
     .brand-canvas {
@@ -200,22 +198,22 @@
         padding: 25px;
     }
 
+    .brand-visual {
+        padding-bottom: 0;
+    }
+
     .brand-photo {
         height: clamp(260px, 65vw, 480px);
     }
 
-    .brand-name {
-        font-size: clamp(2.5rem, 8vw, 5rem);
-        left: 0;
-    }
-
     .brand-copy {
         gap: 20px;
+        padding: 10px 0;
     }
 }
 
 /* ========================================
-   RESPONSIVE - MOBILE
+   RESPONSIVE — MOBILE
 ======================================== */
 
 @media (max-width: 600px) {
@@ -227,23 +225,20 @@
 
     .brand-canvas {
         padding: 18px;
-        gap: 30px;
+        gap: 25px;
     }
 
     .brand-visual {
-        padding-bottom: 30px;
+        padding-bottom: 0;
     }
 
     .brand-photo {
         height: 300px;
     }
 
-    .brand-name {
-        bottom: 30px;
-        left: 0;
-
-        font-size: clamp(1.8rem, 8vw, 3.5rem);
-        letter-spacing: -0.06em;
+    .brand-copy {
+        gap: 20px;
+        padding: 5px 0;
     }
 
     .brand-headline {

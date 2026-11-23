@@ -1,5 +1,5 @@
 /* ========================================
-   CAROUSEL SECTION - BURGUNDY GRADIENT
+   CAROUSEL SECTION — CINEMATIC BURGUNDY
 ======================================== */
 
 .photo-carousel-section {
@@ -14,13 +14,14 @@
 
     padding: 60px 0 70px;
 
-    background: linear-gradient(180deg,
-            var(--burgundy) 0%,
-            #754057 55%,
-            var(--burgundy-light) 100%);
+
+    background-color: var(--burgundy-deep);
+
+    background: transparent;
 
     overflow: hidden;
 }
+
 
 /* ========================================
    CAROUSEL CONTAINER
@@ -111,9 +112,7 @@
     align-items: center;
     justify-content: center;
 
-    background: linear-gradient(145deg,
-            var(--burgundy-dark),
-            var(--obsidian));
+    background: transparent;
 
     color: var(--ivory);
 

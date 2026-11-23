@@ -1,0 +1,662 @@
+/* ========================================
+   PRADAGRAPH — ALBUM GALLERY
+======================================== */
+
+.album-page {
+    width: 100%;
+    min-height: 100vh;
+    overflow: hidden;
+
+    background:
+        radial-gradient(ellipse 65% 35% at 80% 20%,
+            rgba(101, 28, 50, 0.22),
+            transparent 75%),
+        var(--obsidian);
+
+    color: var(--ivory);
+}
+
+/* ========================================
+   ALBUM HEADER
+======================================== */
+
+.album-header {
+    position: relative;
+    width: 100%;
+    padding: 145px 6% 75px;
+}
+
+.album-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+
+    padding: 0;
+    border: none;
+    background: transparent;
+
+    font-family: var(--font-sans);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    color: var(--ivory-muted);
+
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.album-back span {
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 1;
+
+    transition: transform 0.3s ease;
+}
+
+.album-back:hover {
+    color: var(--ivory);
+}
+
+.album-back:hover span {
+    transform: translateX(-5px);
+}
+
+/* ========================================
+   ALBUM HEADING
+======================================== */
+
+.album-heading {
+    max-width: 1100px;
+    margin: 85px auto 0;
+    text-align: center;
+}
+
+.album-eyebrow {
+    display: block;
+    margin-bottom: 25px;
+
+    font-family: var(--font-sans);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: #C69AAA;
+}
+
+.album-heading h1 {
+    margin: 0;
+
+    font-family: var(--font-serif);
+    font-size: clamp(4rem, 9vw, 9rem);
+    font-weight: 500;
+    line-height: 1;
+    letter-spacing: -0.055em;
+    color: var(--ivory);
+}
+
+.album-heading p {
+    max-width: 480px;
+    margin: 30px auto 0;
+
+    font-family: var(--font-sans);
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1.8;
+    color: var(--ivory-muted);
+}
+
+.album-count {
+    display: inline-block;
+    margin-top: 30px;
+
+    font-family: var(--font-sans);
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    color: #C69AAA;
+}
+
+/* ========================================
+   GALLERY SECTION
+======================================== */
+
+.album-gallery-section {
+    position: relative;
+    width: 100%;
+    padding: 35px 6% 150px;
+}
+
+.album-media-grid {
+    width: 100%;
+    max-width: 1250px;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+    align-items: start;
+}
+
+/* ========================================
+   GALLERY MEDIA CARDS
+======================================== */
+
+.album-media-item {
+    position: relative;
+    display: block;
+    width: 100%;
+    min-width: 0;
+
+    aspect-ratio: 3 / 4;
+
+    padding: 0;
+    border: none;
+    border-radius: 0;
+
+    overflow: hidden;
+    background: #26151C;
+
+    cursor: pointer;
+}
+
+/* Slightly varied proportions for editorial feel */
+
+.album-media-item:nth-child(5n + 2) {
+    aspect-ratio: 4 / 5;
+}
+
+.album-media-item:nth-child(5n + 4) {
+    aspect-ratio: 1 / 1;
+}
+
+.album-media-item img,
+.album-media-item video {
+    display: block;
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+
+    transition: transform 0.7s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.album-media-item:hover img,
+.album-media-item:hover video {
+    transform: scale(1.045);
+}
+
+/* ========================================
+   MEDIA HOVER OVERLAY
+======================================== */
+
+.album-media-overlay {
+    position: absolute;
+    inset: 0;
+
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    padding: 22px;
+
+    background: linear-gradient(to top,
+            rgba(9, 9, 11, 0.65),
+            transparent 65%);
+
+    opacity: 0;
+    transition: opacity 0.35s ease;
+}
+
+.album-media-item:hover .album-media-overlay,
+.album-media-item:focus-visible .album-media-overlay {
+    opacity: 1;
+}
+
+.album-media-overlay span {
+    font-family: var(--font-sans);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    color: var(--ivory);
+
+    transform: translateY(8px);
+    transition: transform 0.35s ease;
+}
+
+.album-media-item:hover .album-media-overlay span,
+.album-media-item:focus-visible .album-media-overlay span {
+    transform: translateY(0);
+}
+
+/* ========================================
+   VIDEO PLAY INDICATOR
+======================================== */
+
+.album-play-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 68px;
+    height: 68px;
+
+    border: 1px solid rgba(247, 244, 240, 0.7);
+    border-radius: 50%;
+
+    background: rgba(9, 9, 11, 0.35);
+    backdrop-filter: blur(10px);
+
+    color: var(--ivory);
+    font-size: 23px;
+
+    transform: translate(-50%, -50%);
+    transition:
+        background 0.3s ease,
+        transform 0.3s ease;
+}
+
+.album-media-item:hover .album-play-icon {
+    background: rgba(101, 28, 50, 0.8);
+    transform: translate(-50%, -50%) scale(1.08);
+}
+
+/* ========================================
+   EMPTY COLLECTION
+======================================== */
+
+.album-empty {
+    width: 100%;
+    max-width: 900px;
+    min-height: 260px;
+    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid rgba(247, 244, 240, 0.1);
+    background: rgba(247, 244, 240, 0.025);
+}
+
+.album-empty p {
+    margin: 0;
+    padding: 25px;
+
+    font-family: var(--font-serif);
+    font-size: clamp(1.5rem, 3vw, 2.5rem);
+    font-style: italic;
+    text-align: center;
+    color: var(--ivory-muted);
+}
+
+/* ========================================
+   FULLSCREEN LIGHTBOX
+======================================== */
+
+.album-lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 70px 90px;
+
+    background: rgba(5, 5, 7, 0.97);
+    backdrop-filter: blur(16px);
+}
+
+/* ========================================
+   LIGHTBOX MEDIA
+======================================== */
+
+.album-lightbox-content {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    height: 100%;
+    max-width: 1400px;
+    min-width: 0;
+    min-height: 0;
+}
+
+.album-lightbox-content img,
+.album-lightbox-content video {
+    display: block;
+
+    width: auto;
+    height: auto;
+
+    max-width: 100%;
+    max-height: 100%;
+
+    object-fit: contain;
+}
+
+.album-lightbox-content video {
+    background: #000;
+}
+
+/* ========================================
+   LIGHTBOX CONTROLS
+======================================== */
+
+.album-lightbox-close,
+.album-lightbox-prev,
+.album-lightbox-next {
+    position: absolute;
+    z-index: 2;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0;
+    border: 1px solid rgba(247, 244, 240, 0.18);
+    border-radius: 50%;
+
+    background: rgba(247, 244, 240, 0.06);
+    backdrop-filter: blur(8px);
+
+    color: var(--ivory);
+    cursor: pointer;
+
+    transition:
+        background 0.3s ease,
+        border-color 0.3s ease,
+        transform 0.3s ease;
+}
+
+.album-lightbox-close:hover,
+.album-lightbox-prev:hover,
+.album-lightbox-next:hover {
+    background: var(--burgundy);
+    border-color: var(--burgundy);
+}
+
+.album-lightbox-close {
+    top: 25px;
+    right: 30px;
+
+    width: 44px;
+    height: 44px;
+
+    font-family: var(--font-sans);
+    font-size: 30px;
+    font-weight: 300;
+    line-height: 1;
+}
+
+.album-lightbox-prev,
+.album-lightbox-next {
+    top: 50%;
+
+    width: 48px;
+    height: 48px;
+
+    font-family: var(--font-sans);
+    font-size: 36px;
+    font-weight: 300;
+
+    transform: translateY(-50%);
+}
+
+.album-lightbox-prev {
+    left: 25px;
+}
+
+.album-lightbox-next {
+    right: 25px;
+}
+
+.album-lightbox-prev:hover,
+.album-lightbox-next:hover {
+    transform: translateY(-50%) scale(1.06);
+}
+
+/* ========================================
+   LIGHTBOX COUNTER
+======================================== */
+
+.album-lightbox-counter {
+    position: absolute;
+    bottom: 25px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    font-family: var(--font-sans);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    color: var(--ivory-muted);
+}
+
+/* ========================================
+   ACCESSIBILITY
+======================================== */
+
+.album-media-item:focus-visible,
+.album-back:focus-visible,
+.album-lightbox-close:focus-visible,
+.album-lightbox-prev:focus-visible,
+.album-lightbox-next:focus-visible {
+    outline: 2px solid #D5A7B5;
+    outline-offset: 5px;
+}
+
+/* ========================================
+   TABLET — 1024px
+======================================== */
+
+@media (max-width: 1024px) {
+
+    .album-header {
+        padding: 140px 5% 65px;
+    }
+
+    .album-heading {
+        margin-top: 65px;
+    }
+
+    .album-gallery-section {
+        padding: 30px 5% 110px;
+    }
+
+    .album-media-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
+    }
+
+    .album-lightbox {
+        padding: 75px 70px;
+    }
+
+    .album-lightbox-prev {
+        left: 12px;
+    }
+
+    .album-lightbox-next {
+        right: 12px;
+    }
+}
+
+/* ========================================
+   MOBILE — 768px
+======================================== */
+
+@media (max-width: 768px) {
+
+    .album-header {
+        padding: 125px 6% 50px;
+    }
+
+    .album-heading {
+        margin-top: 55px;
+    }
+
+    .album-eyebrow {
+        font-size: 10px;
+        margin-bottom: 20px;
+    }
+
+    .album-heading h1 {
+        font-size: clamp(3.2rem, 11vw, 5.5rem);
+    }
+
+    .album-heading p {
+        max-width: 340px;
+        margin-top: 23px;
+        font-size: 14px;
+    }
+
+    .album-count {
+        margin-top: 22px;
+    }
+
+    .album-gallery-section {
+        padding: 20px 6% 85px;
+    }
+
+    .album-media-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .album-media-item,
+    .album-media-item:nth-child(5n + 2),
+    .album-media-item:nth-child(5n + 4) {
+        aspect-ratio: 3 / 4;
+    }
+
+    .album-media-overlay {
+        padding: 12px;
+    }
+
+    .album-media-overlay span {
+        font-size: 9px;
+    }
+
+    .album-play-icon {
+        width: 50px;
+        height: 50px;
+        font-size: 18px;
+    }
+
+    .album-lightbox {
+        padding: 75px 12px 85px;
+    }
+
+    .album-lightbox-close {
+        top: 18px;
+        right: 18px;
+        width: 40px;
+        height: 40px;
+    }
+
+    .album-lightbox-prev,
+    .album-lightbox-next {
+        top: auto;
+        bottom: 18px;
+        width: 42px;
+        height: 42px;
+        transform: none;
+    }
+
+    .album-lightbox-prev {
+        left: 20px;
+    }
+
+    .album-lightbox-next {
+        right: 20px;
+    }
+
+    .album-lightbox-prev:hover,
+    .album-lightbox-next:hover {
+        transform: scale(1.06);
+    }
+
+    .album-lightbox-counter {
+        bottom: 32px;
+    }
+}
+
+/* ========================================
+   SMALL MOBILE — 480px
+======================================== */
+
+@media (max-width: 480px) {
+
+    .album-header {
+        padding: 115px 6% 40px;
+    }
+
+    .album-heading {
+        margin-top: 45px;
+    }
+
+    .album-heading h1 {
+        font-size: clamp(2.8rem, 11vw, 4rem);
+    }
+
+    .album-heading p {
+        font-size: 13px;
+    }
+
+    .album-gallery-section {
+        padding: 15px 4% 75px;
+    }
+
+    .album-media-grid {
+        gap: 9px;
+    }
+
+    .album-media-overlay span {
+        display: none;
+    }
+
+    .album-play-icon {
+        width: 44px;
+        height: 44px;
+        font-size: 16px;
+    }
+
+    .album-lightbox {
+        padding: 75px 10px 85px;
+    }
+}
+
+/* ========================================
+   REDUCED MOTION
+======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .album-back,
+    .album-back span,
+    .album-media-item img,
+    .album-media-item video,
+    .album-media-overlay,
+    .album-media-overlay span,
+    .album-play-icon,
+    .album-lightbox-close,
+    .album-lightbox-prev,
+    .album-lightbox-next {
+        transition: none;
+    }
+
+    .album-media-item:hover img,
+    .album-media-item:hover video {
+        transform: none;
+    }
+}

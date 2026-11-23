@@ -1,0 +1,407 @@
+/* ========================================
+   FEATURED ALBUMS SECTION
+======================================== */
+
+.featured-albums-section {
+    position: relative;
+    width: 100%;
+
+    padding: 145px 6% 115px;
+
+    background: transparent;
+    overflow: hidden;
+}
+
+/* ========================================
+   CONTAINER
+======================================== */
+
+.featured-albums-container {
+    position: relative;
+    width: 100%;
+    max-width: 1120px;
+    margin: 0 auto;
+}
+
+/* ========================================
+   SECTION HEADING
+======================================== */
+
+.featured-albums-heading {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.featured-albums-eyebrow {
+    display: block;
+    margin-bottom: 14px;
+
+    font-family: var(--font-sans);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.22em;
+
+    color: var(--burgundy-muted);
+}
+
+.featured-albums-heading h2 {
+    margin: 0;
+
+    font-family: var(--font-serif);
+    font-size: clamp(2.4rem, 4vw, 4rem);
+    font-weight: 500;
+    line-height: 1.1;
+    letter-spacing: -0.04em;
+
+    color: var(--ivory);
+}
+
+.featured-albums-heading h2 em {
+    font-weight: 400;
+    color: var(--ivory-soft);
+}
+
+.featured-albums-heading p {
+    margin-top: 12px;
+
+    font-family: var(--font-sans);
+    font-size: 13px;
+    line-height: 1.6;
+
+    color: var(--ivory-muted);
+}
+
+/* ========================================
+   THREE-COLUMN EDITORIAL GRID
+======================================== */
+
+.featured-albums-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    gap: 26px;
+    align-items: start;
+}
+
+/* ========================================
+   ALBUM CARD
+======================================== */
+
+.featured-album-card {
+    display: block;
+    min-width: 0;
+    margin-top: 0;
+
+    color: inherit;
+    text-decoration: none;
+
+    transition: transform 0.5s ease;
+}
+
+.featured-album-card:hover {
+    transform: translateY(-8px);
+}
+
+.featured-album-card:focus-visible {
+    outline: 2px solid var(--ivory);
+    outline-offset: 6px;
+}
+
+/* ========================================
+   BASE ALBUM PHOTOGRAPH
+======================================== */
+
+.featured-album-image {
+    position: relative;
+    width: 100%;
+
+    height: 370px;
+    max-height: none;
+    aspect-ratio: auto;
+
+    overflow: hidden;
+
+    background-color: var(--obsidian);
+}
+
+/* NALANGU — ALIGN WITH SCHOOL WALK */
+
+.featured-album-card:nth-child(1) {
+    margin-top: -25px;
+}
+
+.featured-album-card:nth-child(3) {
+    margin-top: 0;
+}
+
+.featured-album-card:nth-child(1) .featured-album-image {
+    height: 420px;
+}
+
+/* ========================================
+   02 — PORTRAITS
+   Lowered for editorial asymmetry
+======================================== */
+
+.featured-album-card:nth-child(2) {
+    margin-top: 45px;
+}
+
+.featured-album-card:nth-child(2) .featured-album-image {
+    height: 370px;
+}
+
+/* ========================================
+   03 — SCHOOL WALK
+   Aligned at top
+======================================== */
+
+.featured-album-card:nth-child(3) {
+    margin-top: 0;
+}
+
+.featured-album-card:nth-child(3) .featured-album-image {
+    height: 370px;
+}
+
+/* ========================================
+   IMAGE FRAMING
+======================================== */
+
+.featured-album-image img {
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center;
+
+    transition: transform 0.8s ease;
+}
+
+.featured-album-card:hover img {
+    transform: scale(1.06);
+}
+
+/* ========================================
+   HOVER OVERLAY
+======================================== */
+
+.featured-album-overlay {
+    position: absolute;
+    inset: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(9, 9, 11, 0.45);
+
+    opacity: 0;
+
+    transition: opacity 0.5s ease;
+}
+
+.featured-album-card:hover .featured-album-overlay,
+.featured-album-card:focus-visible .featured-album-overlay {
+    opacity: 1;
+}
+
+.featured-album-overlay span {
+    font-family: var(--font-sans);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+
+    color: var(--ivory);
+}
+
+/* ========================================
+   ALBUM DETAILS
+======================================== */
+
+.featured-album-info {
+    padding-top: 14px;
+}
+
+.featured-album-category {
+    display: block;
+
+    font-family: var(--font-sans);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+
+    color: var(--burgundy-muted);
+}
+
+.featured-album-info h3 {
+    margin-top: 8px;
+
+    font-family: var(--font-serif);
+    font-size: clamp(1.5rem, 2.3vw, 2.3rem);
+    font-weight: 500;
+    line-height: 1.15;
+
+    color: var(--ivory);
+}
+
+.featured-album-info p {
+    margin-top: 5px;
+
+    font-family: var(--font-sans);
+    font-size: 12px;
+    line-height: 1.6;
+
+    color: var(--ivory-muted);
+}
+
+/* ========================================
+   RESPONSIVE — TABLET
+======================================== */
+
+@media (max-width: 900px) {
+
+    .featured-albums-section {
+        padding: 125px 5% 105px;
+    }
+
+    .featured-albums-container {
+        max-width: 760px;
+    }
+
+    .featured-albums-grid {
+        gap: 16px;
+    }
+
+    .featured-album-image {
+        height: 290px;
+    }
+
+    .featured-album-card:nth-child(1) .featured-album-image {
+        height: 330px;
+    }
+
+    .featured-album-card:nth-child(2) {
+        margin-top: 30px;
+    }
+
+    .featured-album-card:nth-child(2) .featured-album-image,
+    .featured-album-card:nth-child(3) .featured-album-image {
+        height: 290px;
+    }
+
+    .featured-album-info h3 {
+        font-size: clamp(1.5rem, 2.8vw, 2rem);
+    }
+
+    .featured-album-category {
+        font-size: 9px;
+        letter-spacing: 0.12em;
+    }
+}
+
+/* ========================================
+   RESPONSIVE — MOBILE
+======================================== */
+
+@media (max-width: 650px) {
+
+    .featured-albums-section {
+        padding: 110px 6% 95px;
+    }
+
+    .featured-albums-container {
+        max-width: 420px;
+    }
+
+    .featured-albums-heading {
+        margin-bottom: 38px;
+    }
+
+    .featured-albums-heading h2 {
+        font-size: clamp(2.1rem, 8vw, 3rem);
+    }
+
+    .featured-albums-heading p {
+        font-size: 12px;
+    }
+
+    .featured-albums-grid {
+        grid-template-columns: 1fr;
+        gap: 42px;
+    }
+
+    /* Reset desktop asymmetry on mobile */
+
+    .featured-album-card:nth-child(1),
+    .featured-album-card:nth-child(2),
+    .featured-album-card:nth-child(3) {
+        margin-top: 0;
+    }
+
+    .featured-album-image,
+    .featured-album-card:nth-child(1) .featured-album-image,
+    .featured-album-card:nth-child(2) .featured-album-image,
+    .featured-album-card:nth-child(3) .featured-album-image {
+        height: auto;
+        max-height: 420px;
+        aspect-ratio: 4 / 5;
+    }
+
+    .featured-album-info {
+        padding-top: 14px;
+    }
+
+    .featured-album-info h3 {
+        font-size: 2rem;
+    }
+
+    .featured-album-info p {
+        font-size: 12px;
+    }
+}
+
+/* ========================================
+   RESPONSIVE — SMALL MOBILE
+======================================== */
+
+@media (max-width: 380px) {
+
+    .featured-albums-section {
+        padding: 100px 5% 80px;
+    }
+
+    .featured-albums-heading h2 {
+        font-size: 2rem;
+    }
+
+    .featured-albums-grid {
+        gap: 35px;
+    }
+
+    .featured-album-image,
+    .featured-album-card:nth-child(1) .featured-album-image,
+    .featured-album-card:nth-child(2) .featured-album-image,
+    .featured-album-card:nth-child(3) .featured-album-image {
+        max-height: 350px;
+    }
+
+    .featured-album-info h3 {
+        font-size: 1.8rem;
+    }
+}
+
+/* ========================================
+   REDUCED MOTION
+======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .featured-album-card,
+    .featured-album-image img,
+    .featured-album-overlay {
+        transition: none;
+    }
+}

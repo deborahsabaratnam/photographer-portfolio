@@ -18,6 +18,7 @@
     width: 100%;
     height: 100svh;
     min-height: 100vh;
+
     overflow: hidden;
     isolation: isolate;
 
@@ -29,7 +30,7 @@
 }
 
 /* ========================================
-   BEYOND / THE - BEHIND CAMERA
+   BEYOND / THE — BEHIND CAMERA
 ======================================== */
 
 .hero-editorial {
@@ -62,10 +63,11 @@
 .hero-editorial-title span {
     display: block;
     white-space: nowrap;
+    margin: 0;
 }
 
 /* ========================================
-   CAMERA - MIDDLE LAYER
+   CAMERA — MIDDLE LAYER
 ======================================== */
 
 .hero-camera-layer {
@@ -80,12 +82,14 @@
 }
 
 /* CameraScene root container */
+
 .hero-camera-layer>div {
     width: 100%;
     height: 100%;
 }
 
 /* Three.js canvas */
+
 .hero-camera-layer canvas {
     display: block;
 
@@ -96,21 +100,33 @@
 }
 
 /* ========================================
-   LENS - FRONT OF CAMERA
+   LENS — FRONT OF CAMERA
 ======================================== */
 
 .hero-front-layer {
     position: absolute;
+
     left: 4%;
-    top: 67%;
+
+    /*
+       Previously 67%.
+       Move LENS upward to reduce the
+       gap between THE and LENS.
+    */
+
+    top: 61%;
+
     width: 92%;
+
     z-index: 3;
     opacity: 0;
+
     pointer-events: none;
 }
 
 .hero-lens-text {
     display: block;
+    margin: 0;
 
     font-family: 'Bodoni Moda', serif;
     font-size: clamp(6rem, 13vw, 15rem);
@@ -123,20 +139,27 @@
 }
 
 /* ========================================
-   SHOWCASE GRADIENT
+   SHARED CINEMATIC BACKGROUND
 ======================================== */
 
 .home-showcase {
     position: relative;
 
-    background: linear-gradient(180deg,
-            var(--burnt-orange) 0%,
-            #754A3D 22%,
-            #304C55 45%,
-            var(--cinematic-blue) 60%,
-            var(--muted-cyan) 75%,
-            #A38E87 90%,
-            #C77B57 100%);
+    background-color: var(--burgundy-deep);
+
+    background-image:
+        radial-gradient(ellipse 65% 35% at 75% 35%,
+            rgba(142, 64, 87, 0.50) 0%,
+            transparent 100%),
+
+        radial-gradient(ellipse 70% 40% at 20% 75%,
+            rgba(101, 28, 50, 0.55) 0%,
+            transparent 100%),
+
+        linear-gradient(180deg,
+            var(--burgundy-deep) 0%,
+            var(--burgundy-dark) 45%,
+            var(--burgundy-deep) 100%);
 }
 
 /* ========================================
@@ -181,7 +204,7 @@
 
     .hero-front-layer {
         left: 5%;
-        top: 65%;
+        top: 61%;
         width: 90%;
     }
 
@@ -205,7 +228,7 @@
     }
 
     .hero-front-layer {
-        top: 68%;
+        top: 64%;
     }
 
     .hero-lens-text {

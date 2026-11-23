@@ -9,6 +9,7 @@ import Contact from './pages/Contact';
 import Navbar from './components/Nav';
 import Footer from './components/Footer';
 import Intro from './components/Intro';
+import ScrollToTop from './components/ScrollToTop';
 
 function App() {
   const [showIntro, setShowIntro] = useState(true);
@@ -24,6 +25,9 @@ function App() {
   return (
     <>
       {showIntro && <Intro />}
+
+      {/* Reset scroll position when navigating */}
+      <ScrollToTop />
 
       <Navbar />
 

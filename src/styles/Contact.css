@@ -1,5 +1,5 @@
 /* ========================================
-   CONTACT PAGE — BURGUNDY TO IVORY
+   CONTACT PAGE — CINEMATIC BURGUNDY GLOW
 ======================================== */
 
 .contact-page {
@@ -9,13 +9,22 @@
 
     padding: 145px 5% 110px;
 
-    background: linear-gradient(180deg,
-            var(--burgundy) 0%,
-            var(--burgundy) 25%,
-            var(--burgundy-light) 55%,
-            var(--burgundy-muted) 75%,
-            var(--ivory) 100%);
+    background-color: var(--obsidian);
+
+    background-image:
+        radial-gradient(ellipse 70% 45% at 20% 25%,
+            rgba(142, 64, 87, 0.7) 0%,
+            rgba(101, 28, 50, 0.45) 45%,
+            transparent 100%),
+
+        radial-gradient(ellipse 75% 50% at 85% 78%,
+            rgba(101, 28, 50, 0.75) 0%,
+            rgba(66, 20, 37, 0.4) 50%,
+            transparent 100%);
+
+    background-repeat: no-repeat;
 }
+
 
 /* ========================================
    FLOATING IVORY CANVAS

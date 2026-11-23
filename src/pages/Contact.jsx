@@ -81,7 +81,7 @@ function Contact() {
             </a>
 
             <a
-              href="https://instagram.com/"
+              href="https://www.instagram.com/pradagraph.lk/"
               target="_blank"
               rel="noopener noreferrer"
             >

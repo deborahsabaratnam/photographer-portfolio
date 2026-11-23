@@ -1,5 +1,6 @@
+
 /* ========================================
-   ABOUT PAGE - OBSIDIAN BACKGROUND
+   ABOUT PAGE — CINEMATIC BURGUNDY GLOW
 ======================================== */
 
 .about-page {
@@ -10,7 +11,21 @@
     padding: 145px 5% 100px;
 
     background-color: var(--obsidian);
+
+    background-image:
+        radial-gradient(ellipse 65% 42% at 78% 25%,
+            rgba(142, 64, 87, 0.65) 0%,
+            rgba(101, 28, 50, 0.42) 45%,
+            transparent 100%),
+
+        radial-gradient(ellipse 70% 45% at 18% 75%,
+            rgba(101, 28, 50, 0.7) 0%,
+            rgba(66, 20, 37, 0.38) 50%,
+            transparent 100%);
+
+    background-repeat: no-repeat;
 }
+
 
 /* ========================================
    FLOATING IVORY CANVAS

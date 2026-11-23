@@ -7,6 +7,7 @@ import BrandIntro from '../components/BrandIntro';
 import PhotoCarousel from '../components/PhotoCarousel';
 import Testimonials from '../components/Testimonials';
 import CameraScene from '../components/CameraScene';
+import FeaturedAlbums from '../components/FeaturedAlbums';
 
 import '../styles/Home.css';
 
@@ -159,6 +160,7 @@ function Home({ showIntro }) {
 
       <div className="home-showcase">
         <PhotoCarousel />
+        <FeaturedAlbums />
         <Testimonials />
       </div>
 
